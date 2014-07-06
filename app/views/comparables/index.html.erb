@@ -1,1 +1,7 @@
-<h1>Hello</h1>
+<h1>Search Comparables</h1>
+
+<%= form_tag("/comparables/search", method: "get") do %>
+  <%= label_tag(:address, "Address:") %>
+  <%= text_field_tag(:address) %>
+  <%= submit_tag("Search") %>
+<% end %>
