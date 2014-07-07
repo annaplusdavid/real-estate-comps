@@ -3,5 +3,7 @@
 <%= form_tag("/comparables/search", method: "get") do %>
   <%= label_tag(:address, "Address:") %>
   <%= text_field_tag(:address) %>
+  <%= label_tag(:city, "City:") %>
+  <%= text_field_tag(:city) %>
   <%= submit_tag("Search") %>
 <% end %>

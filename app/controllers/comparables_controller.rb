@@ -5,11 +5,13 @@ class ComparablesController < ApplicationController
 
   def search
     @address = search_params[:address]
-    
+    @city = search_params[:city]
+
+    @results = Zillow.search_results(@address, @city)
   end
 
   private
     def search_params
-      params.permit(:address)
+      params.permit(:address, :city)
     end
 end
