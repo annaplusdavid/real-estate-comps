@@ -1,1 +1,7 @@
 <h1>Comparables for <%= link_to @results.address[:street], @results.links[:homedetails], :target => 'top' %></h1>
+
+<% @comps.each_with_index do |(zpid, comp), index| %>
+  <h3><%= index+1%>. <%= zpid %> <%=  link_to comp.address[:street], comp.links[:homedetails], :target => 'top' %></h3>
+  Square Feet: <%= comp.finished_square_feet %>     Price: <%= comp.price %>    $/Sq Ft: <%= comp.price.to_f/comp.finished_square_feet.to_f %>   Last Sold Date: <%= comp.last_sold_date %>
+  <br>
+<% end %>

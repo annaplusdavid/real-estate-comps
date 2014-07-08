@@ -8,6 +8,8 @@ class ComparablesController < ApplicationController
     @city = search_params[:city]
 
     @results = Zillow.search_results(@address, @city)
+    @comps = Zillow.z_comparables(@address, @city)
+    
   end
 
   private
